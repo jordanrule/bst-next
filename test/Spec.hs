@@ -21,7 +21,7 @@ n14 = Node n13 14 Nil
 n10 = Node Nil 10 n14
 n8 = Node n3 8 n10
 
-cases =
+successorCases =
   [ ("successor(1) == 3", n1, n3)
   , ("successor(3) == 4", n3, n4)
   , ("successor(4) == 6", n4, n6)
@@ -36,7 +36,7 @@ cases =
 mkCase (label, node, expected) =
   TestLabel label $ TestCase $ assertEqual label (next n8 node) expected
 
-tests = TestList $ map mkCase cases
+tests = TestList $ map mkCase successorCases
 
 main :: IO ()
 main = do
